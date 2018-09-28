@@ -1,3 +1,4 @@
+"use strict";
 var Student = /** @class */ (function () {
     function Student(firstName, middleInitial, lastName) {
         this.firstName = firstName;
@@ -8,7 +9,7 @@ var Student = /** @class */ (function () {
     return Student;
 }());
 function greeter(person) {
-    return "Hello, " + person.firstName + " " + person.lastName;
+    return "Hello, you name is " + person.firstName + " " + person.lastName;
 }
 var user = new Student("Jorge", "A", "Jaramillo");
 document.body.innerHTML = greeter(user);
