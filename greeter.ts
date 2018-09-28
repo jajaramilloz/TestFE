@@ -12,7 +12,8 @@ interface Person {
     lastName: string;
 }
 function greeter(person: Person) {
-    return "Hello, you name is " + person.firstName + " " + person.lastName;
+    console.log(person.firstName);
+    return "Hello, youraa a name is " + person.firstName + " " + person.lastName;
 }
 
 let user = new Student("Jorge","A", "Jaramillo");
