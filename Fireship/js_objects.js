@@ -6,7 +6,7 @@ bigint
 boolean
 null
 undefined
-zymbol
+symbol
 */
 
 //object literal
