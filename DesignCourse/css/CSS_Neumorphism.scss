@@ -1,0 +1,18 @@
+body {
+    background: #EEEEEE;
+    margin: 0;
+    font-family: 'Nunito', sans-serif;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+.container {
+    padding: 1em;
+    height: 30%;
+    width: 30%;
+    border-radius: .5em;
+    box-shadow: 
+        -12px -12px 12px 0 rgba(255, 255, 255, 1),
+        12px 12px 12px 0 rgba(0, 0, 0, 0.03);
+}

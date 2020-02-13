@@ -1,0 +1,19 @@
+body {
+  background: #EEEEEE;
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+.container {
+  padding: 1em;
+  height: 30%;
+  width: 30%;
+  border-radius: .5em;
+  -webkit-box-shadow: -12px -12px 12px 0 white, 12px 12px 12px 0 rgba(0, 0, 0, 0.03);
+          box-shadow: -12px -12px 12px 0 white, 12px 12px 12px 0 rgba(0, 0, 0, 0.03);
+}
+/*# sourceMappingURL=CSS_Neumorphism.css.map */
