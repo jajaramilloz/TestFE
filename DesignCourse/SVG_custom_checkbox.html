@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom SVG checkbox</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/SVG_custom_checkbox.css">
+</head>
+<body>
+    <div class="inner">
+        <input type="checkbox" name="cb" id="cb">
+        <label for="cb" id="checkbox">
+            <svg viewBox="0 0 100 100">
+                <rect class="box" x="12.879" y="13.329" width="75" height="75"/>
+                <polyline class="check" points="28.816,53.384 45.874,72 69.86,33.599 "/>
+            </svg>
+            <span>Show Notes</span>
+        </label>
+    </div>
+    <script>
+        let checkbox = document.getElementById('cb');
+        let svg = document.getElementById('checkbox');
+
+        svg.addEventListener('click', () => {
+            if (checkbox.checked)
+                svg.classList.add('reverse')
+            else
+                svg.classList.remove('reverse')
+        })
+    </script>
+</body>
+</html>
