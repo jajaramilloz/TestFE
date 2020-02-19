@@ -1,0 +1,236 @@
+:root {
+	--ambrosia:						#FCDBBA;
+	--apricot: 						#FF8652;
+	--aubergine: 					#6A2352;
+	--auburn: 						#A12F2F;
+	--banana:							#FEE694;
+	--beetroot:						#7F0421;
+	--berry:							#461234;
+	--blue-tack: 					#82BFE0;
+	--blue-gray: 					#91A2C2;
+	--blush: 							#D67B71;
+	--bronze:							#C27940;
+	--bud:								#94C15C;
+	--burnt-orange:				#FF5F00;
+	--butter:							#F2C94C;
+	--camo:								#AAA843;
+	--cappuccino:					#C9B092;
+	--carmine:						#9A133E;
+	--cerise:							#FF0F63;
+	--chocolate: 					#8F5D38;
+	--chestnut: 					#81291F;
+	--clay: 							#7D6050;
+  --cloud:    					#F2EFE3;
+	--conker: 						#6F3131;
+	--coral: 							#EB4444;
+	--dove:								#C9C5CB;
+	--dusty-purple: 			#7D6391;
+	--dusty-pink: 				#E4ADAD;
+	--emerald: 						#55B95F;
+	--fern:								#4F8D08;
+	--forest: 						#2E644A;
+	--forget-me-not: 			#91A7FA;
+	--fudge:							#C28742;
+	--grassy: 						#A8D363;
+	--gray: 							#98919F;
+	--green:							#62B90A;
+	--hazelnut: 					#D08E5A;
+	--hot-pink:						#FF3263;
+	--ink:								#292C31;
+	--iron:								#6B5C6C;
+	--lapis:							#2B4D8D;
+	--latte:							#A38468;
+	--leafy:							#318553;
+	--lemon:							#EAFC7E;
+	--lilac:							#8E8ADE;
+	--lime: 							#73D645;
+	--limestone:					#C9C5B5;
+	--magenta:						#BC2767;
+	--meadow:							#7A9A3E;
+	--melon:							#F2994A;
+	--midnight:						#1B3955;
+	--mink:								#E8C9A1;
+	--mint:								#C4EA70;
+	--moss:								#83A944;
+	--mushroom:						#EDE8D5;
+	--mustard:						#CC9E08;
+	--navy:								#363A57;
+	--orange:							#FD8A04;
+	--orchid:							#7945BF;
+	--pale-lemon:					#F4FFDC;
+	--peach:							#FFB190;
+	--petal:							#F4E9F3;
+	--pebble:							#B8B4BE;
+	--pink:								#FFC9D8;
+	--pond-bottom:				#264A46;
+	--posy:								#DED7EC;
+	--powder-blue:				#B5D0E0;
+	--powder-pink:				#FBD1D1;
+	--primrose:						#E1F7B0;
+	--punch:							#FF5563;
+	--purple:							#A95AF3;
+	--purple-slate:				#545375;
+	--rainforest:					#25422E;
+	--raspberry-jam:			#3C0D2B;
+	--robins-egg:					#B8DEE0;
+	--rouge:							#CC3737;
+	--royal:							#4169E1;
+	--ruby:								#D1314B;
+	--sage:								#87A376;
+	--sakura:							#FFE4E4;
+	--salmon:							#FF7863;
+	--sand:								#E1BE7C;
+	--squash:							#E96310;
+	--sea-glass:					#7FD1AE;
+	--sea-foam:						#5D998B;
+	--sea-fog:						#758C92;
+	--slate:							#7184A5;
+	--spearmint:					#94E0CF;
+	--spice:							#B54E16;
+	--spring:							#5ACB65;
+	--strawberry-yogurt:	#E4BCAD;
+	--sun:								#FEC305;
+  --teal:          			#29879C;
+	--twilight:						#203763;
+	--vavavoom:						#BF0D0D;
+  --walnut:      				#381F19;
+	--white:							#FFFFFF;
+	--yellow:							#FFE03D;
+	
+	--trans: transparent;
+	--trans05: rgba(255,255,255,0.05);
+	--trans1: rgba(255,255,255,0.1);
+	--trans2: rgba(255,255,255,0.2);
+	--trans4: rgba(255,255,255,0.4);
+	--trans5: rgba(255,255,255,0.5);
+}
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    font-size: 1.18em; 
+}
+body { 
+    background: #223; 
+    margin: 2em; 
+    max-width: 90em; 
+}
+.frame { 
+    height: 2em; 
+    width: 2em; 
+    display: inline-block; 
+    float: left;	
+    margin: 0.1em; 
+    border-radius: 1em; 
+    font-size: 4em; 
+}
+
+.frame div { 
+    position: relative; 
+    transform-style: preserve-3d; 
+    font-size: 1em; 
+}
+.frame *::before,
+.frame *::after { 
+    content: ''; 
+    display: block; 
+    position: relative;  
+}
+.today { 
+    font-size: 10em; 
+}
+
+.ladybird { 
+    background-color: var(--sage); 
+}
+.ladybird div {
+    background: var(--ink);
+    background-image:
+		repeating-radial-gradient(
+			circle at 0.07em 0.03em,
+			var(--mushroom) 0 0.06em,
+			var(--trans) 0.07em 4em),
+		repeating-radial-gradient(
+			circle at 0.35em 0.03em,
+			var(--mushroom) 0 0.06em,
+			var(--trans) 0.07em 4em);
+    border-radius: 0.24em/0.8em;
+	height: 0.8em; 
+	left: 0.8em;
+	top: 0.6em;
+	transform:
+		rotate(3deg)
+		translateZ(1em);
+	width: 0.42em;
+}
+.ladybird div::before {
+    background: var(--coral);
+    background-image:
+		repeating-radial-gradient(
+			circle at 0.2em 0.2em,
+			var(--trans2) 0 0.08em,
+			var(--trans) 0.09em 3em),
+		
+		repeating-radial-gradient(
+			circle at 0.02em 0.08em,
+			var(--raspberry-jam) 0 0.07em,
+			var(--trans) 0.08em 3em),
+		repeating-radial-gradient(
+			circle at 0.16em 0.3em,
+			var(--raspberry-jam) 0 0.07em,
+			var(--trans) 0.08em 3em),
+		repeating-radial-gradient(
+			circle at 0.2em 0.54em,
+			var(--raspberry-jam) 0 0.05em,
+			var(--trans) 0.06em 3em),
+		repeating-radial-gradient(
+			circle at 0.3em 0.15em,
+			var(--raspberry-jam) 0 0.04em,
+			var(--trans) 0.05em 3em),
+		
+		repeating-radial-gradient(
+			circle at 0.06em 0.28em,
+			var(--trans) 0 0.36em,
+			var(--rouge) 0.37em 3em);
+	border-radius: 0.1em 1em 1.2em 0.1em;
+	height: 0.7em;
+	left: 0.25em;
+	top: 0.12em;
+	transform:
+		rotate(-5deg)
+		translateZ(1em);
+	width: 0.34em;
+}
+.ladybird div::after {
+    background: var(--coral);
+    background-image:
+		repeating-radial-gradient(
+			circle at 0.32em 0.08em,
+			var(--raspberry-jam) 0 0.07em,
+			var(--trans) 0.08em 3em),
+		repeating-radial-gradient(
+			circle at 0.21em 0.32em,
+			var(--raspberry-jam) 0 0.07em,
+			var(--trans) 0.08em 3em),
+		repeating-radial-gradient(
+			circle at 0.16em 0.54em,
+			var(--raspberry-jam) 0 0.05em,
+			var(--trans) 0.06em 3em),
+		repeating-radial-gradient(
+			circle at 0.04em 0.15em,
+			var(--raspberry-jam) 0 0.04em,
+			var(--trans) 0.05em 3em),
+		
+		repeating-radial-gradient(
+			circle at 0.38em 0.28em,
+			var(--trans) 0 0.36em,
+			var(--rouge) 0.37em 3em);
+	border-radius: 1em 0.1em 0.1em 1.2em;
+	height: 0.7em;
+	left: -0.17em;
+	top: -0.58em;
+	transform:
+		rotate(5deg)
+		translateZ(1em);
+	width: 0.34em;
+}
