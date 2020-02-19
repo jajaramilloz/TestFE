@@ -11,7 +11,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}\\Fireship\\js_async_await.js"
+            "program": "${workspaceFolder}\\ming\\JS_convert2Boolean.js"
         }
     ]
 }
