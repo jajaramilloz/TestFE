@@ -1,6 +1,10 @@
+div {
+  border: .01rem solid black;
+}
+
 .interna {
-  height: 20pt;
-  width: 20pt;
+  height: 2rem;
+  width: 2rem;
 }
 
 .aa {
@@ -105,7 +109,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 80pt;
+  height: 3rem;
 }
 
 .h {
@@ -122,7 +126,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 80pt;
+  height: 4rem;
 }
 
 .i {
@@ -139,6 +143,6 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 80pt;
+  height: 6rem;
 }
 /*# sourceMappingURL=CSS_flexbox.css.map */

@@ -1,6 +1,9 @@
+div {
+    border: .01rem solid black;
+}
 .interna {
-    height: 20pt;
-    width: 20pt;
+    height: 2rem;
+    width: 2rem;
 }
 
 .aa {
@@ -47,19 +50,19 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    height: 80pt;
+    height: 3rem;
 }
 .h {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    height: 80pt;
+    height: 4rem;
 }
 .i {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 80pt;
+    height: 6rem;
 }
