@@ -1,0 +1,38 @@
+/* global */
+:root {
+    /* global variable */
+    --colorGlobal: red;
+    /* variable with multiple values */
+    --margin: 10px 20px;
+    /* numerical value */
+    --value: 5;
+
+    --border-width: 3px;
+    --border: calc(var(--border-width) * 2) solid #DD0;
+}
+
+p.estiloGlobal {
+    /* to override a global variable value */
+    --colorGlobal: #918263;
+    /* to use a global variable */
+    color: var(--colorGlobal);
+}
+
+/* local */
+p.estiloLocal {
+    --colorLocal: blue;
+    color: var(--colorLocal);
+}
+
+p.estiloFallback {
+    color: var(--coloNoDefinido, #619045);
+}
+
+div {
+    /* uso de variable de múltiples valores */
+    margin: var(--margin);
+    /* calculo de valores con variables */
+    padding: calc(var(--value) * 2px);
+
+    border: var(--border);
+}

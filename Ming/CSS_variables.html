@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS variables</title>
+    <link rel="stylesheet" href="css/CSS_variables.css">
+</head>
+<body>
+    <div>
+        <p>Sin estilo</p>
+        <p class="estiloGlobal">Con estilo global</p>
+        <p class="estiloLocal">Con estilo local</p>
+        <p class="estiloFallback">Con estilo fallback</p>
+    </div>
+    <div>
+        <p id="pp" style="--color: red; color: var(--color);">texto PPP</p>
+        <p id="valorP1">.</p>
+        <p id="valorP2">.</p>
+    </div>
+    <script>
+        const ele0 = document.getElementById('pp');
+
+        const ele1 = document.getElementById('valorP1');
+        ele1.innerHTML = 'Color: ' + ele0.style.getPropertyValue('--color');
+
+        const ele2 = document.getElementById('valorP2');
+        ele2.innerHTML = 'Color: ' + getComputedStyle(ele0).getPropertyValue('color');
+
+        ele0.style.setProperty('--color', 'blue');
+    </script>
+</body>
+</html>
