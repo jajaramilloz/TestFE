@@ -11,7 +11,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}\\Fireship\\js_console.js"
+            "program": "${workspaceFolder}\\fireship\\js_array.js"
         }
     ]
 }

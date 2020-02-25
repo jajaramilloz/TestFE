@@ -1,0 +1,68 @@
+div {
+    border: .01rem solid black;
+}
+.interna {
+    height: 2rem;
+    width: 2rem;
+}
+
+.aa {
+    background: yellow;
+}
+.ab {
+    background: blue;
+}
+.ac {
+    background: red;
+}
+.a {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.b {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.c {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.d {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.e {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.f {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+.g {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 3rem;
+}
+.h {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 4rem;
+}
+.i {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 6rem;
+}

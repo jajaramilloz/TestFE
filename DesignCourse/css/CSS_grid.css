@@ -1,0 +1,66 @@
+html, body {
+  background: ivory;
+}
+
+div {
+  padding: .5em;
+}
+
+.grid-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1.2fr 1.5fr;
+      grid-template-columns: 1fr 1.2fr 1.5fr;
+  -ms-grid-rows: 1fr 4fr 3fr 2fr;
+      grid-template-rows: 1fr 4fr 3fr 2fr;
+      grid-template-areas: "main   main   menu" "main   main   candy" "tip1   tip2   candy" "footer footer candy";
+  height: 100vh;
+  margin: 2em;
+}
+
+.main {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: main;
+  background: lightcoral;
+}
+
+.tip1 {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: tip1;
+  background: lightgreen;
+}
+
+.tip2 {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: tip2;
+  background: lightskyblue;
+}
+
+.footer {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: footer;
+  background: lightslategray;
+}
+
+.menu {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: menu;
+  background: white;
+}
+
+.candy {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 3;
+  grid-area: candy;
+  background: silver;
+}
+/*# sourceMappingURL=CSS_grid.css.map */
