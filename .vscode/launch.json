@@ -11,11 +11,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-<<<<<<< HEAD
-            "program": "${workspaceFolder}\\ming\\JS_convert2Boolean.js"
-=======
-            "program": "${workspaceFolder}\\Fireship\\js_console.js"
->>>>>>> master
+            "program": "${workspaceFolder}\\fireship\\js_array.js"
         }
     ]
 }
