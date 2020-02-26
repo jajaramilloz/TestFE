@@ -25,6 +25,7 @@ body {
     padding: 8em 3em;
     color: white;
     font-family: 'Montserrat';
+    background-size: cover !important;
 
     h1 {
         font-size: 5em;
@@ -82,4 +83,17 @@ body {
         border-right: 1px solid #fff;
         left: 0;
     }
+}
+
+.swiper-button-next, .swiper-button-prev {
+    top: 85%;
+    outline: none;
+}
+
+.swiper-botton-next {
+    right: 3em;
+}
+
+.swiper-botton-prev {
+    left: 3em|;
 }
