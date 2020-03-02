@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS how to check if array includes a value</title>
+</head>
+<body>
+    <div>
+        <h1>JS -- How to check if array includes a value</h1>
+        <h2>const array = ['pizza','pastel','perro'];</h2>
+        <h3>Newer browsers</h3>
+        <p>array.includes('pizza') //true</p>
+        <p id='newer_t'>(to be calculated)</p>
+        <p>array.includes('ham') //true</p>
+        <p id='newer_f'>(to be calculated)</p>
+        <h3>Older browsers</h3>
+        <p>array.indexOf('pizza') != -1 //true</p>
+        <p id='older_t'>(to be calculated)</p>
+        <p>array.indexOf('ham') != -1 //true</p>
+        <p id='older_f'>(to be calculated)</p>
+    </div>
+</body>
+<script>
+    const array = ['pizza','pastel','perro'];
+    document.getElementById('newer_t').innerHTML = '[' + array.includes('pizza') + ']';
+    document.getElementById('older_t').innerHTML = '[' + (array.indexOf('pizza') != -1) + ']';
+    document.getElementById('newer_f').innerHTML = '[' + array.includes('ham') + ']';
+    document.getElementById('older_f').innerHTML = '[' + (array.indexOf('ham') != -1) + ']';
+</script>
+</html>
