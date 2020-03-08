@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/CSS_navbar.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="dark">
     <nav class="navbar">
         <ul class="navbar-nav">
             <li class="logo">
@@ -177,7 +177,7 @@
                         ></path>
                         </g>
                     </svg>
-                    <!-- <svg
+                    <svg
                         class="theme-icon"
                         id="solarIcon"
                         aria-hidden="true"
@@ -226,7 +226,7 @@
                             class="fa-primary"
                         ></path>
                         </g>
-                    </svg> -->
+                    </svg>
                     <span class="link-text">Themify</span>
                 </a>
             </li>
@@ -251,4 +251,30 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime ipsum explicabo molestiae, aliquam iste nisi tempore facilis dolorum itaque veritatis inventore adipisci non quaerat commodi omnis repudiandae autem odio possimus.</p>
     </main>
 </body>
+<script>
+    const themeMap = {
+        dark: 'light',
+        light: 'solar',
+        solar: 'dark'
+    };
+
+    const theme = 'dark'; //localStorage.getItem('theme');
+    const bodyClass = document.body.classList;
+    console.log('bodyClass: ' +bodyClass);
+    console.log('theme: ' + theme);
+    // theme && bodyClass.add(theme);
+    localStorage.setItem('theme', theme);
+
+    function toggleItem() {
+        const current = localStorage.getItem('theme');
+        const next = themeMap[current];
+
+        bodyClass.replace(current, next);
+        localStorage.setItem('theme', next);
+        console.log('cur theme: ' + current);
+        console.log('new theme: ' + next);
+    }
+
+    document.getElementById('themeButton').onclick = toggleItem;
+</script>
 </html>
