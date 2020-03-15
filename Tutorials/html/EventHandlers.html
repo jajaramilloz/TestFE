@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handlers</title>
+    <!-- https://sarahchima.com/blog/event-handlers/ -->
+</head>
+<body>
+    <div>
+        <h1>Inline Event Handler</h1>
+        <button onclick="InlineAlert()">Say Hi</button>
+    </div>
+    <div>
+        <h1>DOM property</h1>
+        <button id='DomProperty'>Say Hi</button>
+    </div>
+    <div>
+        <h1>Inline + DOM</h1>
+        <button id='InlineAndDom' onclick="InlineAlert()">Say Hi</button>
+    </div>
+    <div>
+        <h1>The addEventListener method</h1>
+        <button id='eventListenerMethod'>Say Hi</button>
+    </div>
+    <div>
+        <h1>Prevent Default Action</h1>
+        <a id='aPreventAction' href="htts://google.com">Prevent default action</a>
+    </div>
+    <div>
+        <h1>Event Propagation</h1>
+        <div class="propagation" onclick="alert('div')"> DIV
+            <p onclick="alert('p')"> P
+                <span onclick="alert('span')">SPAN</span>
+            </p>
+        </div>
+        <h1>Stop Propagation</h1>
+        <div class="propagation" onclick="alert('div')"> DIV
+            <p onclick="alert('p')"> P
+                <span id='spanStopProp'>SPAN</span>
+            </p>
+        </div>
+    </div>
+    <div>
+        <h1>Enable / Disable Event Listener</h1>
+        <button id='btnEna'>Enable</button>
+        <button id='btnDis'>Disable</button>
+    </div>
+</body>
+<script>
+    function InlineAlert() {
+        alert('Inline Alert:  Hi!!');
+    }
+
+    var button2 = document.getElementById('DomProperty');
+    button2.onclick = () => {
+        alert('Dom Property Alert:  Hi!!');
+    }
+
+    var button3 = document.getElementById('InlineAndDom');
+    button3.onclick = () => {
+        alert('Dom Property Alert:  Hi!!  This take precedence');
+    }
+
+    var button4 = document.getElementById('eventListenerMethod');
+    button4.addEventListener('click', (event) => {
+        alert('addEventListener method:  Hi!!');
+        console.log(event);
+    });
+
+    let link1 = document.getElementById('aPreventAction');
+    link1.addEventListener('click', (event) => {
+        alert('Prevented default action!!');
+        event.preventDefault();
+    });
+
+    let span = document.getElementById('spanStopProp');
+    span.addEventListener('click', (event) => {
+        alert('span');
+        event.stopPropagation();
+    });
+
+    function enableEvent() {
+        alert('Enabled!');
+    }
+    function disableEvent() {
+        alert('Disabled!');
+        let btnEna = document.getElementById('btnEna');
+        btnEna.removeEventListener('click', enableEvent);
+    }
+    let btnEna = document.getElementById('btnEna');
+    btnEna.addEventListener('click', enableEvent);
+    let btnDis = document.getElementById('btnDis');
+    btnDis.addEventListener('click', disableEvent);
+</script>
+<style>
+    div.propagation {
+        border: 1px solid green;
+        margin: 15px;
+    }
+</style>
+</html>
