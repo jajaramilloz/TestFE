@@ -49,5 +49,54 @@
             </li>
         </ul>
     </div>
+    <div id="sections" class="sections">
+
+    </div>
 </body>
+<style>
+    .sections {
+        display: grid;
+    }
+    .subsection.CSS {
+        background-color: lightblue;
+    }
+    .subsections.HTML {
+        background-color: lightgrey;
+    }
+    .subsection.JS {
+        background-color: lightyellow;
+    }
+    .subsection.SVG {
+        background-color: lightgreen;
+    }
+</style>
+<script>
+    let sections = ["CSS", "HTML", "JS", "SVG"];
+    let articles = [ 
+        { name: "CSS Sequence Animation",
+          url: "DesignCourse/CSS_SequenceAnimations.html",
+          section: "CSS" },
+    ];
+    let divSections = document.getElementById("sections");
+    sections.forEach(section => {
+        let divSubSection = document.createElement("div");
+        divSubSection.classList.add("subsection");
+        divSubSection.classList.add(section);
+        divSections.appendChild(divSubSection);
+
+        let h1SubSection = document.createElement("h1");
+        h1SubSection.innerText = section;
+        h1SubSection.classList.add("title-subsection");
+        divSubSection.appendChild(h1SubSection);
+
+        articles.forEach(article => {
+            if (section === article["section"]) {
+                let a = document.createElement("a");
+                a.innerText = article["name"];
+                a.setAttribute('href', article["url"]);
+                divSubSection.appendChild(a);
+            }
+        });
+    });
+</script>
 </html>
