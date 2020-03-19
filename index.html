@@ -6,76 +6,53 @@
     <title>Document</title>
 </head>
 <body>
-    <div>
-        <ul>
-            <li>
-                <a href="DesignCourse/CSS_SequenceAnimations.html">CSS Sequence Animation</a>
-            </li>
-            <li>
-                <a href="DesignCourse/CSS_Neumorphism.html">CSS Neumorphism</a>
-            </li>
-            <li>
-                <a href="DesignCourse/CSS_avoidCodeRedundancy.html">CSS avoid extend tutorial</a>
-            </li>
-            <li>
-                <a href="Ming/CSS_variables.html">CSS variables</a>
-            </li>
-            <li>
-                <a href="Fireship/CSS_flexbox.html">CSS flexbox</a>
-            </li>
-            <li>
-                <a href="DesignCourse/CSS_grid.html">CSS grid</a>
-            </li>
-            <li>
-                <a href="DesignCourse/CSS_grid_auto_fit_auto_fill.html">CSS Grid AutoFit vs AutoFill</a>
-            </li>
-            <li>
-                <a href="Fireship/CSS_navbar.html">CSS navbar</a>
-            </li>
-            <li>
-                <a href="Tutorials/html/EventHandlers.html">Event Handlers</a>
-            </li>
-            <li>
-                <a href="DesignCourse/JS_swiperjs.html">JS swipersJS</a>
-            </li>
-            <li>
-                <a href="Ming/JS_valueInArray.html">JS value in array</a>
-            </li>
-            <li>
-                <a href="Ming/JS_String2Character.html">4 ways to convert String to Character Array</a>
-            </li>
-            <li>
-                <a href="DesignCourse/SVG_custom_checkbox.html">SVG custom checkbox</a>
-            </li>
-        </ul>
-    </div>
-    <div id="sections" class="sections">
-
-    </div>
+    <div id="sections" class="sections"></div>
 </body>
-<style>
-    .sections {
-        display: grid;
-    }
-    .subsection.CSS {
-        background-color: lightblue;
-    }
-    .subsections.HTML {
-        background-color: lightgrey;
-    }
-    .subsection.JS {
-        background-color: lightyellow;
-    }
-    .subsection.SVG {
-        background-color: lightgreen;
-    }
-</style>
 <script>
     let sections = ["CSS", "HTML", "JS", "SVG"];
     let articles = [ 
-        { name: "CSS Sequence Animation",
-          url: "DesignCourse/CSS_SequenceAnimations.html",
+        { name:    "Sequence Animation",
+          url:     "DesignCourse/CSS_SequenceAnimations.html",
           section: "CSS" },
+        { name:    "Neumorphism",
+          url:     "DesignCourse/CSS_Neumorphism.html",
+          section: "CSS" },
+        { name:    "avoid extend tutorial",
+          url:     "DesignCourse/CSS_avoidCodeRedundancy.html",
+          section: "CSS" },
+        { name:    "Variables",
+          url:     "Ming/CSS_variables.html",
+          section: "CSS" },
+        { name:    "Flexbox",
+          url:     "Fireship/CSS_flexbox.html",
+          section: "CSS" },
+        { name:    "Grid",
+          url:     "DesignCourse/CSS_grid.html",
+          section: "CSS" },
+        { name:    "Grid AutoFit vs AutoFill",
+          url:     "DesignCourse/CSS_grid_auto_fit_auto_fill.html",
+          section: "CSS" },
+        { name:    "Navbar",
+          url:     "Fireship/CSS_navbar.html",
+          section: "CSS" },
+        { name:    "Event Handlers",
+          url:     "Tutorials/html/EventHandlers.html",
+          section: "HTML" },
+        { name:    "SwipersJS",
+          url:     "DesignCourse/JS_swiperjs.html",
+          section: "JS" },
+        { name:    "Value in array",
+          url:     "Ming/JS_valueInArray.html",
+          section: "JS" },
+        { name:    "4 ways to convert String to Character Array",
+          url:     "Ming/JS_String2Character.html",
+          section: "JS" },
+        { name:    "Custom checkbox",
+          url:     "DesignCourse/SVG_custom_checkbox.html",
+          section: "SVG" },
+        { name: "",
+          url: "",
+          section: "CSS" }
     ];
     let divSections = document.getElementById("sections");
     sections.forEach(section => {
@@ -99,4 +76,32 @@
         });
     });
 </script>
+<style>
+    body {
+        margin: 0;
+        font-family: monospace;
+    }
+    .sections {
+        display: grid;
+        padding: 1em;
+        grid-gap: 1em;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    }
+    .subsection {
+        display: grid;
+        padding: 1em;
+    }
+    .subsection.CSS {
+        background-color: rgb(234, 244, 247);
+    }
+    .subsection.HTML {
+        background-color: rgb(241, 239, 239);
+    }
+    .subsection.JS {
+        background-color: lightyellow;
+    }
+    .subsection.SVG {
+        background-color: rgb(226, 248, 226);
+    }
+</style>
 </html>
