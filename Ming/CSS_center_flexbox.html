@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centering Elements with Flexbox</title>
+    <!-- https://www.samanthaming.com/tidbits/75-centering-elements-with-flexbox/ -->
+</head>
+<body>
+    <div class="parent1">
+        <p>Title</p>
+        <img src="images/samantha-ming-logo.svg" alt="ming">
+    </div>
+    <div class="parent2">
+        <div class="child2">
+            <p>Title</p>
+            <img src="images/samantha-ming-logo.svg" alt="ming">
+        </div>
+    </div>
+</body>
+<style>
+    .parent1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: .2em solid black;
+        margin-bottom: 2em;
+        width: 60%;
+    }
+
+    .parent2 {
+        display: flex;
+        border: .2em solid black;
+        width: 60%;
+    }
+    .child2 {
+        margin: auto;
+    }
+    img {
+        margin: 4em;
+        width: 12em;
+    }
+</style>
+</html>
