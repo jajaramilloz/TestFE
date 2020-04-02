@@ -8,37 +8,108 @@
 </head>
 <body>
     <div class="parent1">
-        <p>Title</p>
-        <img src="images/samantha-ming-logo.svg" alt="ming">
+        <span>
+            <p>1.1 V & HCenter with Flex properties</p>
+            <img src="images/samantha-ming-logo.svg" alt="ming" class="child1">
+        </span>
+    </div>
+    <div class="parent1">
+        <div class="child1">
+            <p>1.2 V & HCenter with Flex properties</p>
+            <img src="images/samantha-ming-logo.svg" alt="ming" class="img1">
+        </div>
     </div>
     <div class="parent2">
         <div class="child2">
-            <p>Title</p>
-            <img src="images/samantha-ming-logo.svg" alt="ming">
+            <p>2. Horizontal Centering with Flexbox</p>
+            <img src="images/samantha-ming-logo.svg" alt="ming" class="img2">
+        </div>
+    </div>
+    <div class="parent3">
+        <div class="child3">
+            <p>3. Vertical Centering with Flexbox</p>
+            <img src="images/samantha-ming-logo.svg" alt="ming" class="img3">
+        </div>
+    </div>
+    <div class="parent4">
+        <div class="child4">
+            <p>4. Vertical + Horizontal Centering with Flexbox + Margin</p>
+            <img src="images/samantha-ming-logo.svg" alt="ming" class="img4">
         </div>
     </div>
 </body>
 <style>
+    div {
+        margin-bottom: 2em;
+    }
     .parent1 {
+        border: 1px solid red;
+        height: 300px;
+        width: 60%;
+
         display: flex;
         align-items: center;
         justify-content: center;
-        border: .2em solid black;
-        margin-bottom: 2em;
-        width: 60%;
     }
-
+    .child1 {
+        width: 100px;
+        height: 100px;
+        background: green;
+    }
+    .img1 {
+        width: 100%;
+    }
     .parent2 {
-        display: flex;
-        border: .2em solid black;
+        border: 1px solid red;
+        height: 300px;
         width: 60%;
+
+        display: flex;
+        justify-content: center;
     }
     .child2 {
+        width: 100px;
+        height: 100px;
+        background: green;
+    }
+    .img2 {
+        width: 100%;
+    }
+    .parent3 {
+        border: 1px solid red;
+        height: 300px;
+        width: 60%;
+
+        display: flex;
+        align-items: center;
+    }
+    .child3 {
+        width: 100px;
+        height: 100px;
+        background: green;
+    }
+    .img3 {
+        width: 100%;
+    }
+    .parent4 {
+        border: 1px solid red;
+        height: 300px;
+        width: 60%;
+
+        display: flex;
+    }
+    .child4 {
+        width: 100px;
+        height: 100px;
+        background: green;
         margin: auto;
     }
-    img {
-        margin: 4em;
-        width: 12em;
+    .img4 {
+        width: 100%;
     }
+    /* img {
+        margin: 4em;
+        width: 6em;
+    } */
 </style>
 </html>

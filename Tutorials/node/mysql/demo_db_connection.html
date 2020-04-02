@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo_db_connection.html</title>
+</head>
+<body>
+    <div>
+        <h2>TestConection</h2>
+        <p>Click <a href="#" onclick="testConection">here</a> to test conection</p>
+        <p id="testConectionResult"></p>
+    </div>
+</body>
+<script>
+    var mysql = require('mysql');
+
+    var con = mysql.createConnection({
+        host: "localhost",
+        user: "inversion",
+        database: "inversion",
+        password: ""
+    });
+
+    function testConection() {
+        let aRes = document.getElementById("testConectionResult");
+        con.connect(function(err) {
+            if (err) {
+                aRes.innerText = err.innerText;
+                throw err;
+            }
+            aRes.innerText = "Connected!";
+
+            // con.query("select * from fxpar;", function(err, result, fields) {
+            //     if (err) throw err;
+            //     console.log(result);
+            //     console.log(fields);
+            // });
+        });
+    }
+</script>
+</html>
