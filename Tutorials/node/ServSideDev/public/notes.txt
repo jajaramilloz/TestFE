@@ -1,0 +1,17 @@
+Desde el directorio mongo:
+mondod --dbpath=data --bind_ip localhost
+localhost:27017
+mongo
+db
+use conFusion
+db :: muestra base de datos actual
+db.help()  :: lista de comandos
+>> insert a document on disches collection
+db.dishes.insert({"name":"Uthapizza", "description":"Test U-P"});
+>> display all documents in collection
+db.dishes.find()
+>> display all documents in a structured way
+db.dishes.find().pretty();
+>> 
+var id = new ObjectId();
+id.getTimeStamp();
