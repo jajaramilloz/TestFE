@@ -1,0 +1,11 @@
+.header-grid {
+    display: grid;
+    grid-template-columns: auto auto;
+    width: 100%;
+}
+.header-left {
+    align-items: left;
+}
+.header-right {
+    justify-self: end;
+}

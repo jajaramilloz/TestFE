@@ -1,0 +1,9 @@
+<div class="dish-list-grid">
+    <div class="dish-list-title">
+        Dishes list
+    </div>
+    <div class="dish-grid-item" *ngFor="let dish of dishes">
+        <app-dish [dish]="dish">
+        </app-dish>
+    </div>
+</div>

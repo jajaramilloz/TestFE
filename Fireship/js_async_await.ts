@@ -1,4 +1,5 @@
 import fetch from 'node-fetch';
+import { resolve } from 'dns';
 
 console.log('sync 1');
 setTimeout(_ => console.log('timeout 2'),0);
@@ -102,3 +103,15 @@ const fruitLoop = async() => {
         log(e);
     }
 }
+
+
+//ANOTHER ASYNC EXAMPLE
+async function getData() {
+    // let reject: (reason?: any) => void;
+    let promise = new Promise((resolve, reject) => {
+        setTimeout(() => resolve('done'), 3000);
+    });
+    let result = await promise;
+    console.log(result);
+}
+getData();

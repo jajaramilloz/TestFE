@@ -1,0 +1,8 @@
+<div class="header-grid">
+    <div class="header-left">
+        <p [routerLink]="['/']">CON FUSION APP</p>
+    </div>
+    <div class="header-right">
+        <p>{{ dataProvider.getUsername()}} {{ user.username }} | {{ user.IsAdmin ? "[admin]" : ""}} | Login...</p>
+    </div>
+</div>

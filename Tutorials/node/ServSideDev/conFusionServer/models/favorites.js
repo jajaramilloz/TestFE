@@ -13,3 +13,5 @@ const favoriteSchema = new Schema({
 
 let Favorites = mongoose.model('Favorite', favoriteSchema);
 module.exports = Favorites;
+
+// var dataSchema = new Schema({..}, { collection: 'favorites' })  // collection name explicity

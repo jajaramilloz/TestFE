@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Window Location</title>
+    <!-- https://www.samanthaming.com/tidbits/86-window-location-cheatsheet/ -->
+</head>
+<body>
+    <h2>window.location</h2>
+    <p id='p'></p>
+    <p>-</p>
+    <p>.assign() :: redirect + it will save your current page in history, so your user can use the "back" button to navigate to it</p>
+    <p>.replace() :: redirect without saving it in history</p>
+    <p>.reload() :: reload the current page</p>
+</body>
+<script>
+    let p = document.getElementById('p');
+    p.innerText = `.origin = ${window.location.origin}\n
+        .protocol = ${window.location.protocol}\n
+        .host = ${window.location.host}\n
+        .hostname = ${window.location.hostname}\n
+        .port = ${window.location.port}\n
+        .pathname = ${window.location.pathname}\n
+        .search = ${window.location.search}\n
+        .hash = ${window.location.hash}\n
+        .href = ${window.location.href}\n
+        .toString() = ${window.location.toString()}\n`;
+</script>
+</html>

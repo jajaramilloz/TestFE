@@ -1,0 +1,9 @@
+<div class="dish-item" [routerLink]="['/dishes', dish._id]">
+    <h2>dish:</h2>
+    <h3><a [routerLink]="['/dishes', dish._id]">{{ dish.name }}</a></h3>
+    <p>{{ dish.description }}</p>
+    <img [src]="dish.image" alt="">
+    <p>{{ dish.label }}</p>
+    <p>{{ dish.price }}</p>
+    <p>{{ dish.category }}</p>
+</div>

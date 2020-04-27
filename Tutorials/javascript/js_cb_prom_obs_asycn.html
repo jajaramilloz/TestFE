@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callbacks vs Promises vs RxJs Observables vs async/ await</title>
+    <script type="text/javascript" src="https://unpkg.com/rxjs/bundles/rxjs.umd.min.js"></script>
+    <!-- <script type="text/javascript" src="/npm:rxjs@6.5.5/internal/operators/switchMap.dew.js"></script> -->
+    <!-- https://academind.com/learn/javascript/callbacks-vs-promises-vs-rxjs-vs-async-awaits/ -->
+</head>
+<body>
+    <div>
+        <button id="bex1">1. Callbacks</button>
+        <p id="pex1"></p>
+        <button id="bex2">2. Promises</button>
+        <p id="pex2"></p>
+        <button id="bex3">3. Observables</button>
+        <p id="pex3"></p>
+        <button id="bex4">4. Async/Await</button>
+        <p id="pex4"></p>
+    </div>
+</body>
+<script>
+    // import { switchMap } from 'https://dev.jspm.io/rxjs@6/operators';
+    const bex1 = document.getElementById('bex1');
+    const pex1 = document.getElementById('pex1');
+    const bex2 = document.getElementById('bex2');
+    const pex2 = document.getElementById('pex2');
+    const bex3 = document.getElementById('bex3');
+    const pex3 = document.getElementById('pex3');
+    const bex4 = document.getElementById('bex4');
+    const pex4 = document.getElementById('pex4');
+    const setText = (p, text) => {
+        p.textContent = text;
+    }
+
+    //EX1: callbacks
+    const checkAuth1 = cb => {
+        setText(pex1, 'Checking Auth...');
+        setTimeout(() => { cb(true); }, 2000);
+    };
+    const fetchUser1 = cb => {
+        setText(pex1, 'Fetching User...');
+        setTimeout(() => { cb({ name: 'JAJZ - 1' }); }, 2000);
+    };
+    bex1.addEventListener('click', () => {
+        checkAuth1(auth => {
+            if (auth) {
+                fetchUser1(user => {
+                    setText(pex1, user.name);
+                });
+            }
+        });
+    });
+
+    //EX2: Promises
+    const checkAuth2 = () => {
+        return new Promise((resolve, reject) => {
+            setText(pex2, 'Checking Auth...');
+            setTimeout(() => { resolve(true); }, 2000);
+        });
+    };
+    const fetchUser2 = () => {
+        return new Promise((resolve, reject) => {
+            setText(pex2, 'Fetching User...');
+            setTimeout(() => { resolve({ name: 'JAJZ - 2' }); }, 2000);
+        });
+    };
+    bex2.addEventListener('click', () => {
+        checkAuth2()
+        .then((isAuth) => {
+            if (isAuth) {
+                return fetchUser2()
+            }
+        })
+        .then((user) => {
+            setText(pex2, user.name);
+        });
+    });
+
+    //EX3: Observables
+    const checkAuth3 = () => {
+        return rxjs.Observable.create((observer) => {
+            setText(pex3, 'Checking Auth...');
+            setTimeout(() => { observer.next(true); }, 2000);
+        });
+    };
+    const fetchUser3 = () => {
+        return rxjs.Observable.create((observer) => {
+            setText(pex3, 'Fetching User...');
+            setTimeout(() => { observer.next({ name: 'JAJZ - 3' }); }, 2000);
+        });
+    };
+    rxjs.fromEvent(bex3, 'click')
+    .pipe(
+        rxjs.operators.switchMap(event => checkAuth3()),
+        rxjs.operators.switchMap(isAuth => {
+            if (isAuth) {
+                return fetchUser3()
+            }
+        })
+    )
+    .subscribe((user) => {
+        setText(pex3, user.name);
+    });
+
+    //EX4: Async/Await
+    const checkAuth4 = () => {
+        return new Promise((resolve, reject) => {
+            setText(pex4, 'Checking Auth...');
+            setTimeout(() => { resolve(true); }, 2000);
+        });
+    };
+    const fetchUser4 = () => {
+        return new Promise((resolve, reject) => {
+            setText(pex4, 'Fetching User...');
+            setTimeout(() => { resolve({ name: 'JAJZ - 4' }); }, 2000);
+        });
+    };
+    bex4.addEventListener('click', async () => {
+        let user = null;
+        const isAuth = await checkAuth4();
+        if (isAuth) {
+            user = await fetchUser4();
+            setText(pex4, user.name);
+        }
+    });
+</script>
+</html>

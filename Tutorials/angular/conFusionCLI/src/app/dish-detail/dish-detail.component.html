@@ -1,0 +1,17 @@
+<div class="dish-grid">
+    <h2>Dish Detail:</h2>
+    <p>test: {{ test }}</p>
+    <h3>ID: {{ dishId }}</h3>
+    <div *ngIf="!!dish">
+        <h3>ID: {{ dish._id }}</h3>
+        <h3>name: {{ dish.name }}</h3>
+        <p>description: {{ dish.description }}</p>
+        <img [src]="dish.image" alt="">
+        <p>label: {{ dish.label }}</p>
+        <p>price: {{ dish.price | currency }}</p>
+        <p>category: {{ dish.category }}</p>
+    </div>
+    <div *ngIf="!dish">
+        <p>dish is null</p>
+    </div>
+</div>

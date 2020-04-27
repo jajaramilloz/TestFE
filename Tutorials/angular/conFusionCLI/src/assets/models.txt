@@ -1,0 +1,151 @@
+const commentSchema = new Schema({
+    rating: {
+        type: Number,
+        min: 1,
+        max: 5,
+        required: true
+    },
+    comment: {
+        type: String,
+        required: true
+    },
+    author: {
+        // type: String,
+        // required: true
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
+    }
+},{
+    timestamps: true
+});
+
+const dishSchema = new Schema( {
+    name: {
+        type: String,
+        required: true,
+        unique: true
+    },
+    description: {
+        type: String,
+        required: true
+    },
+    image: {
+        type: String,
+        required: true
+    },
+    category: {
+        type: String,
+        required: true
+    },
+    label: {
+        type: String,
+        default: ''
+    },
+    price: {
+        type: Currency,
+        required: true,
+        min: 0
+    },
+    featured: {
+        type: Boolean,
+        default: false
+    },
+    comments: [ commentSchema ]
+},{
+    timestamps: true
+});
+export const products = [{
+    "_id" : ObjectId("5e8c8acac610e626b00865ee"),
+    "label" : "Hot",
+    "featured" : true,
+    "name" : "Uthappizza 7",
+    "image" : "images/uthappizza.png",
+    "category" : "mains",
+    "price" : 499,
+    "description" : "A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola oliv
+es, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.",
+"createdAt" : ISODate("2020-04-07T14:14:35.008Z"),
+"updatedAt" : ISODate("2020-04-07T14:40:05.260Z"),
+"__v" : 3,
+
+"comments" : [
+            {
+                    "_id" : ObjectId("5e8c8c18c610e626b00865ef"),
+                    "rating" : 1,
+                    "comment" : "first 2 comment",
+                    "author" : ObjectId("5e8be8441eedaa4fc8a6eb7b"),
+                    "createdAt" : ISODate("2020-04-07T14:20:08.144Z"),
+                    "updatedAt" : ISODate("2020-04-07T14:37:57.319Z")
+            }
+    ]
+}
+
+const favoriteSchema = new Schema({
+    author: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
+    },
+    dishes: [ { type : mongoose.Schema.Types.ObjectId, ref: 'Dish' } ]
+},{
+    timestamps: true
+});
+
+
+const promotionSchema = new Schema( {
+    name: {
+        type: String,
+        required: true,
+        unique: true
+    },
+    image: {
+        type: String,
+        required: true
+    },
+    label: {
+        type: String,
+        default: ''
+    },
+    price: {
+        type: Currency,
+        required: true,
+        min: 0
+    },
+    description: {
+        type: String,
+        required: true
+    },
+    featured: {
+        type: Boolean,
+        default: false
+    }
+},{
+    timestamps: true
+});
+
+
+
+const userSchema = new Schema( {
+    // usertname: {
+    //     type: String,
+    //     required: true,
+    //     unique: true
+    // },
+    // password: {
+    //     type: String,
+    //     required: true
+    // },
+    firstname: {
+        type: String,
+        default: ''
+    },
+    lastname: {
+        type: String,
+        default: ''
+    },
+    admin: {
+        type: Boolean,
+        default: false
+    }
+},{
+    timestamps: true
+});

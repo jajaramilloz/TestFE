@@ -1,0 +1,25 @@
+.dish-list-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    /* minmax(100px, 4fr); */
+        /* repeat(3, 1fr); */
+}
+
+.dish-grid-item {
+    border: 1px black solid;
+    margin: .5rem;
+    padding: 1rem .5rem;
+}
+
+.dish-list-title {
+    border: 2px black solid;
+    margin: .5rem;
+    padding: 1rem .5rem;
+    text-align: center;
+    font-size: 3em;
+    font-weight: bold;
+    grid-column-start: span 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
